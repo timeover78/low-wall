@@ -1,0 +1,236 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>LOW 벽화봉사단 | Love On the Wall</title>
+<meta name="description" content="벽에 사랑을 그리는 벽화봉사단 LOW(Love On the Wall)의 활동 기록입니다.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="LOW 벽화봉사단">
+<meta property="og:title" content="LOW 벽화봉사단 | Love On the Wall">
+<meta property="og:description" content="벽에 사랑을 그리는 벽화봉사단 LOW. 2019년부터 함께 그린 벽화 활동을 소개합니다.">
+<meta property="og:url" content="https://timeover78.github.io/low-wall/">
+<meta property="og:image" content="https://timeover78.github.io/low-wall/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#ECEEE9">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%231D2320'/%3E%3Ccircle cx='32' cy='32' r='14' fill='none' stroke='%23E0413F' stroke-width='8'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=IBM+Plex+Mono:wght@500&family=IBM+Plex+Sans+KR:wght@400;500;700&display=swap">
+<style>
+:root{
+  --wall:#ECEEE9;--panel:#FBFCFA;--ink:#1D2320;--muted:#5E6862;--line:#D3D8D2;
+  --love:#E0413F;--sky:#2F7FA8;--sun:#F2B632;--leaf:#3E9A6A;--lilac:#8B6CC4;--scrim:rgba(20,24,22,.62);
+  --f-display:"Black Han Sans","Apple SD Gothic Neo","Malgun Gothic",sans-serif;
+  --f-body:"IBM Plex Sans KR","Apple SD Gothic Neo","Malgun Gothic",system-ui,sans-serif;
+  --f-mono:"IBM Plex Mono",ui-monospace,Consolas,monospace;
+}
+@media (prefers-color-scheme:dark){:root{
+  --wall:#161A18;--panel:#1F2421;--ink:#ECEFEA;--muted:#9EA8A1;--line:#323A35;
+  --love:#F0605D;--sky:#5BA6CF;--sun:#F5C452;--leaf:#5DBB89;--lilac:#A88DE0;--scrim:rgba(0,0,0,.72);color-scheme:dark}}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--wall);color:var(--ink);font-family:var(--f-body);font-size:15px;line-height:1.6;
+  padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);
+  background-image:radial-gradient(circle at 20% 30%,color-mix(in srgb,var(--ink) 3%,transparent) 0 1px,transparent 1.5px),
+                   radial-gradient(circle at 70% 80%,color-mix(in srgb,var(--ink) 2.5%,transparent) 0 1px,transparent 1.5px);
+  background-size:7px 7px,11px 11px}
+img{max-width:100%}
+[hidden]{display:none!important}
+.wrap{max-width:1120px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+button,textarea{font:inherit;color:inherit}
+button{cursor:pointer}
+:focus-visible{outline:3px solid var(--sky);outline-offset:2px}
+
+header{padding-block:40px 28px}
+.brand{display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:20px}
+.word{font-family:var(--f-display);font-weight:400;font-size:clamp(72px,16vw,148px);line-height:.82;margin:0}
+.word .o{color:var(--love)}
+.stroke{display:flex;height:12px;margin-top:14px;width:min(100%,360px)}
+.stroke i{flex:1;border-radius:2px 8px 3px 9px;transform:skewX(-14deg)}
+.stroke i:nth-child(1){background:var(--love)}.stroke i:nth-child(2){background:var(--sun)}
+.stroke i:nth-child(3){background:var(--leaf)}.stroke i:nth-child(4){background:var(--sky)}.stroke i:nth-child(5){background:var(--lilac)}
+.tag{margin:14px 0 0;font-size:17px;font-weight:500}
+.tag b{font-family:var(--f-mono);font-weight:500;font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);display:block;margin-bottom:2px}
+.stats{display:flex;gap:28px;flex-wrap:wrap}
+.stat{display:flex;flex-direction:column}
+.stat strong{font-family:var(--f-display);font-size:40px;line-height:1;font-weight:400;font-variant-numeric:tabular-nums}
+.stat span{font-size:12.5px;color:var(--muted);letter-spacing:.04em}
+
+.bar{display:flex;flex-wrap:wrap;align-items:center;gap:12px;padding-block:14px;border-top:2px solid var(--ink);margin-bottom:24px}
+.chips{display:flex;flex-wrap:wrap;gap:6px}
+.chip{border:1.5px solid var(--line);background:var(--panel);border-radius:999px;padding:5px 14px;font-size:13.5px;font-family:var(--f-mono)}
+.chip[aria-pressed="true"]{background:var(--ink);color:var(--wall);border-color:var(--ink)}
+
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(270px,1fr));gap:22px;padding-bottom:64px}
+.card{background:var(--panel);border:0;padding:0;text-align:left;border-radius:4px;overflow:hidden;display:flex;flex-direction:column;
+  box-shadow:0 1px 0 var(--line),0 10px 24px -18px rgba(0,0,0,.35);transition:transform .18s ease}
+.card:hover{transform:translateY(-3px) rotate(-.3deg)}
+.card .ph{aspect-ratio:4/3;max-width:100%;background:var(--line);position:relative;overflow:hidden}
+.card .ph img{width:100%;height:100%;object-fit:cover;display:block}
+.card .cnt{position:absolute;right:10px;bottom:10px;background:var(--scrim);color:#fff;font-family:var(--f-mono);font-size:12px;padding:2px 8px;border-radius:999px}
+.card .body{padding:14px 16px 18px;display:flex;flex-direction:column;gap:4px;min-width:0}
+.date{font-family:var(--f-mono);font-size:12.5px;color:var(--muted);letter-spacing:.03em}
+.card h3{margin:0;font-size:18px;line-height:1.35;text-wrap:balance}
+.meta{font-size:13.5px;color:var(--muted)}
+.swatch{height:6px}
+
+.sheet{position:fixed;inset:0;z-index:50;background:var(--scrim);display:flex;align-items:flex-start;justify-content:center;overflow-y:auto;
+  padding:max(24px,env(safe-area-inset-top,0px)) max(12px,env(safe-area-inset-right,0px)) max(24px,env(safe-area-inset-bottom,0px)) max(12px,env(safe-area-inset-left,0px))}
+.pane{background:var(--panel);width:min(920px,100%);border-radius:8px;overflow:hidden;box-shadow:0 30px 60px -20px rgba(0,0,0,.5)}
+.pane-head{display:flex;justify-content:space-between;align-items:flex-start;gap:12px;padding:22px 24px 8px}
+.pane-head h2{margin:2px 0 0;font-size:24px;line-height:1.3;text-wrap:balance}
+.x{border:0;background:transparent;font-size:26px;line-height:1;padding:4px 8px;border-radius:6px;color:var(--muted)}
+.pane-body{padding:8px 24px 24px;display:flex;flex-direction:column;gap:18px}
+.facts{display:flex;flex-wrap:wrap;gap:8px 20px;font-size:14px}
+.facts span{color:var(--muted)}
+.desc{white-space:pre-wrap;margin:0;max-width:68ch}
+.photos{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:6px}
+.photos button{border:0;padding:0;aspect-ratio:1;max-width:100%;overflow:hidden;border-radius:3px;background:var(--line)}
+.photos img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .2s}
+.photos button:hover img{transform:scale(1.04)}
+.promo{border:1.5px solid var(--line);border-radius:8px;overflow:hidden}
+.promo-head{display:flex;flex-wrap:wrap;gap:8px;align-items:center;justify-content:space-between;padding:10px 12px;background:color-mix(in srgb,var(--sun) 16%,var(--panel))}
+.promo-head strong{font-size:14px}
+.promo textarea{width:100%;border:0;background:var(--panel);padding:12px 14px;min-height:200px;resize:vertical;font-size:14px;line-height:1.7;display:block}
+.btn{border:0;border-radius:8px;padding:6px 12px;font-weight:700;font-size:13px;background:var(--ink);color:var(--wall)}
+.note{font-size:13px;color:var(--muted);margin:0}
+
+.lb{position:fixed;inset:0;z-index:60;background:rgba(8,10,9,.94);display:flex;align-items:center;justify-content:center}
+.lb img{max-width:calc(100% - 24px);max-height:calc(100% - 110px);object-fit:contain}
+.lb button{position:absolute;border:0;background:rgba(255,255,255,.14);color:#fff;border-radius:999px;width:44px;height:44px;font-size:22px}
+.lb .lx{top:calc(14px + env(safe-area-inset-top,0px));right:calc(14px + env(safe-area-inset-right,0px))}
+.lb .lp{left:calc(12px + env(safe-area-inset-left,0px))}.lb .ln{right:calc(12px + env(safe-area-inset-right,0px))}
+.lb .lc{position:absolute;bottom:calc(18px + env(safe-area-inset-bottom,0px));left:0;right:0;text-align:center;color:#fff;font-family:var(--f-mono);font-size:13px}
+.toast{position:fixed;left:50%;bottom:calc(24px + env(safe-area-inset-bottom,0px));transform:translateX(-50%);background:var(--ink);color:var(--wall);padding:10px 18px;border-radius:999px;font-size:14px;z-index:70}
+footer{padding-block:24px 40px;color:var(--muted);font-size:12.5px;border-top:1px solid var(--line)}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+<header class="wrap">
+  <div class="brand">
+    <div>
+      <h1 class="word" aria-label="LOW">L<span class="o">O</span>W</h1>
+      <div class="stroke" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div>
+      <p class="tag"><b>Love On the Wall</b>벽에 사랑을 그리는 벽화봉사단</p>
+    </div>
+    <div class="stats">
+      <div class="stat"><strong id="sActs">0</strong><span>벽화 활동</span></div>
+      <div class="stat"><strong id="sYears">0</strong><span>함께한 해</span></div>
+      <div class="stat"><strong id="sPhotos">0</strong><span>기록 사진</span></div>
+    </div>
+  </div>
+</header>
+
+<main class="wrap">
+  <div class="bar"><div class="chips" id="years" role="group" aria-label="연도 선택"></div></div>
+  <div class="grid" id="grid"></div>
+</main>
+
+<footer class="wrap">LOW · Love On the Wall 벽화봉사단</footer>
+
+<div class="sheet" id="detail" hidden role="dialog" aria-modal="true" aria-labelledby="dTitle"></div>
+<div class="lb" id="lb" hidden role="dialog" aria-modal="true" aria-label="사진 크게 보기">
+  <img id="lbImg" alt="">
+  <button class="lx" id="lbX" aria-label="닫기">×</button>
+  <button class="lp" id="lbP" aria-label="이전 사진">‹</button>
+  <button class="ln" id="lbN" aria-label="다음 사진">›</button>
+  <div class="lc" id="lbC"></div>
+</div>
+<div class="toast" id="toast" hidden></div>
+
+<script>
+/* 활동 추가: 아래 목록에 한 줄 넣고, photos 폴더(원본)와 photos/thumb 폴더(작은 사진)에 같은 이름으로 사진을 올리면 됩니다. */
+const ACTIVITIES = [
+  { id:"2025-08-ihyeon",       date:"2025-08", title:"진주시 이현동 벽화",             place:"진주시 이현동",              photos:2 },
+  { id:"2024-12-wicheon",      date:"2024-12", title:"거창군 위천초등학교 벽화",       place:"거창군 위천초등학교",        photos:3 },
+  { id:"2023-08-obu",          date:"2023-08", title:"산청군 오부초등학교 벽화",       place:"산청군 오부초등학교",        photos:3 },
+  { id:"2022-11-waon",         date:"2022-11", title:"순천 와온마을 벽화",             place:"순천시 와온마을",            photos:2 },
+  { id:"2022-08-sanchon",      date:"2022-08", title:"경남산촌유학원 벽화",            place:"경남산촌유학원",             photos:2 },
+  { id:"2021-06-chahwang",     date:"2021-06", title:"산청 차황초등학교 벽화",         place:"산청군 차황초등학교",        photos:2 },
+  { id:"2020-11-galjeon",      date:"2020-11", title:"진주시 갈전초등학교 벽화",       place:"진주시 갈전초등학교",        photos:2 },
+  { id:"2020-11-geumseo",      date:"2020-11", title:"산청군 금서초등학교 벽화",       place:"산청군 금서초등학교",        photos:3 },
+  { id:"2019-08-suryeonwon",   date:"2019-08", title:"산청군 청소년 수련원 벽화",      place:"산청학생야영수련원",         photos:2 },
+  { id:"2019-02-saengbiryang", date:"2019-02", title:"산청군 생비량지역아동센터 벽화", place:"산청군 생비량지역아동센터",  photos:4 },
+];
+
+const $ = s => document.querySelector(s);
+const esc = s => String(s ?? "").replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+const SW = ["var(--love)","var(--sun)","var(--leaf)","var(--sky)","var(--lilac)"];
+const full  = (a,i) => `photos/${a.id}-${i+1}.jpg`;
+const thumb = (a,i) => `photos/thumb/${a.id}-${i+1}.jpg`;
+const list = ACTIVITIES.slice().sort((a,b) => b.date.localeCompare(a.date));
+let year = "all";
+
+function fmtDate(d, long){
+  const [y,m,dd] = d.split("-").map(Number);
+  if (!dd) return long ? `${y}년 ${m}월` : `${y}.${String(m).padStart(2,"0")}`;
+  return long ? `${y}년 ${m}월 ${dd}일` : `${y}.${String(m).padStart(2,"0")}.${String(dd).padStart(2,"0")}`;
+}
+function toast(msg){ const t = $("#toast"); t.textContent = msg; t.hidden = false; clearTimeout(toast._t); toast._t = setTimeout(() => t.hidden = true, 2200); }
+
+function render(){
+  const years = [...new Set(list.map(a => a.date.slice(0,4)))];
+  $("#sActs").textContent = list.length;
+  $("#sYears").textContent = years.length;
+  $("#sPhotos").textContent = list.reduce((s,a) => s + a.photos, 0);
+  $("#years").innerHTML = ["all", ...years].map(y => `<button class="chip" data-y="${y}" aria-pressed="${year===y}">${y==="all"?"전체":y}</button>`).join("");
+  $("#grid").innerHTML = list.filter(a => year === "all" || a.date.startsWith(year)).map((a,k) => `
+    <button class="card" data-id="${a.id}">
+      <div class="ph"><img src="${thumb(a,0)}" alt="${esc(a.title)}" loading="lazy">${a.photos>1?`<span class="cnt">사진 ${a.photos}</span>`:""}</div>
+      <div class="swatch" style="background:${SW[list.indexOf(a)%5]}"></div>
+      <div class="body"><span class="date">${fmtDate(a.date)}</span><h3>${esc(a.title)}</h3><span class="meta">${esc(a.place)}</span></div>
+    </button>`).join("");
+}
+$("#years").addEventListener("click", e => { const b = e.target.closest("[data-y]"); if (b){ year = b.dataset.y; render(); } });
+$("#grid").addEventListener("click", e => { const c = e.target.closest(".card"); if (c) location.hash = c.dataset.id; });
+
+function promoText(a){
+  const tags = ["#LOW","#loveonthewall","#벽화봉사","#벽화","#봉사활동","#벽화그리기"];
+  const p1 = a.place.split(/\s+/)[0].replace(/[^\p{L}\p{N}]/gu,""); if (p1) tags.push("#" + p1);
+  return [`🎨 LOW 벽화봉사 | ${a.title}`, ``, `📅 ${fmtDate(a.date,true)}`, `📍 ${a.place}`, ``,
+    `회색 벽에 색을 입히고, 동네에 온기를 더합니다.`, `Love On the Wall, 벽에 사랑을 그리는 LOW였습니다 ❤️`, ``, tags.join(" ")].join("\n");
+}
+
+function openDetail(id){
+  const a = list.find(x => x.id === id), d = $("#detail");
+  if (!a){ d.hidden = true; document.body.style.overflow = ""; return; }
+  const idx = [...Array(a.photos).keys()];
+  d.innerHTML = `<div class="pane">
+    <div class="pane-head"><div><span class="date">${fmtDate(a.date,true)}</span><h2 id="dTitle">${esc(a.title)}</h2></div><button class="x" data-close aria-label="닫기">×</button></div>
+    <div class="pane-body">
+      <div class="facts"><div><span>장소 </span>${esc(a.place)}</div><div><span>사진 </span>${a.photos}장</div></div>
+      <div class="photos">${idx.map(i => `<button data-lb="${i}" aria-label="사진 ${i+1} 크게 보기"><img src="${thumb(a,i)}" alt="" loading="lazy"></button>`).join("")}</div>
+      <div class="promo"><div class="promo-head"><strong>홍보 문구</strong><button class="btn" id="cpBtn">복사하기</button></div>
+        <textarea id="promoTa" aria-label="홍보 문구" spellcheck="false">${esc(promoText(a))}</textarea></div>
+      <p class="note">사진을 누르면 크게 볼 수 있어요.</p>
+    </div></div>`;
+  d.hidden = false; document.body.style.overflow = "hidden";
+  d.querySelector("[data-close]").onclick = closeDetail;
+  d.querySelectorAll("[data-lb]").forEach(b => b.onclick = () => openLb(a, +b.dataset.lb));
+  $("#cpBtn").onclick = async () => { const ta = $("#promoTa");
+    try { await navigator.clipboard.writeText(ta.value); toast("홍보 문구를 복사했어요"); } catch(e){ ta.focus(); ta.select(); toast("선택된 글을 복사하세요"); } };
+}
+function closeDetail(){ history.replaceState(null, "", location.pathname + location.search); $("#detail").hidden = true; document.body.style.overflow = ""; }
+$("#detail").addEventListener("click", e => { if (e.target.id === "detail") closeDetail(); });
+window.addEventListener("hashchange", () => openDetail(location.hash.slice(1)));
+
+const LB = { a:null, i:0 };
+function openLb(a, i){ LB.a = a; LB.i = i; showLb(); $("#lb").hidden = false; }
+function showLb(){ $("#lbImg").src = full(LB.a, LB.i); $("#lbC").textContent = `${LB.i+1} / ${LB.a.photos}`; $("#lbP").hidden = $("#lbN").hidden = LB.a.photos < 2; }
+function stepLb(n){ LB.i = (LB.i + n + LB.a.photos) % LB.a.photos; showLb(); }
+$("#lbX").onclick = () => $("#lb").hidden = true;
+$("#lbP").onclick = () => stepLb(-1); $("#lbN").onclick = () => stepLb(1);
+$("#lb").addEventListener("click", e => { if (e.target.id === "lb") $("#lb").hidden = true; });
+document.addEventListener("keydown", e => {
+  if (!$("#lb").hidden){ if (e.key==="Escape") $("#lb").hidden = true; if (e.key==="ArrowLeft") stepLb(-1); if (e.key==="ArrowRight") stepLb(1); return; }
+  if (e.key === "Escape" && !$("#detail").hidden) closeDetail();
+});
+
+render();
+if (location.hash) openDetail(location.hash.slice(1));
+</script>
+</body>
+</html>
